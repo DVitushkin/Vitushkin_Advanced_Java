@@ -6,7 +6,6 @@ import java.util.HashMap;
  *  Class that can check is <comparable> from IsAnagram() method - anagram to <base>.
  */
 
-
 public class AnagramStringChecker {
     private final String base;
 
