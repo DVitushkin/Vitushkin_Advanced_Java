@@ -1,7 +1,7 @@
 package org.DVitushkin.bracketsfiller;
 
 /**
- * Main class of task about v.
+ * Class what have method to fill string by opening and closing brackets.
  */
 
 public class BracketsFiller {
