@@ -27,9 +27,4 @@ public class Demonstrator {
                                     || (student.getAge()  <= 60 && student.getSex() == Sex.MAN)))
                 .forEach(student -> System.out.printf("<%s> is rabotyaga\n", student.getName()));
     }
-
-
-
-
-
 }

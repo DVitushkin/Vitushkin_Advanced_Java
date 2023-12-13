@@ -34,4 +34,4 @@ public class BracketsFiller {
         result.append(")");
         return result;
     }
-    }
+}

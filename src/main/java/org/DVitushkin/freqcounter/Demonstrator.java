@@ -9,7 +9,5 @@ public class Demonstrator {
         String base = "aabcccccarrrrrrrrrrrrrra";
         System.out.printf("Was put: <%s>\n", base);
         System.out.printf("Expected: <%s>, got: <%s>\n", "c", FreqCounter.getMostFrequentChar(base));
-
-
     }
 }
