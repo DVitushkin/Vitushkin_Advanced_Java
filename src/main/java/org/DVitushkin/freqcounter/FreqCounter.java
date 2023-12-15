@@ -1,6 +1,7 @@
 package org.DVitushkin.freqcounter;
 
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Main class what can find most frequent symbol in String.
@@ -8,7 +9,7 @@ import java.util.HashMap;
 
 public class FreqCounter {
     public static Character getMostFrequentChar(String str) {
-        HashMap<Character, Integer> storage = new HashMap<>();
+        Map<Character, Integer> storage = new HashMap<>();
 
         Character result = null;
         int maxFrequent = 0;

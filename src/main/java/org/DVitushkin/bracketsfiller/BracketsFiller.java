@@ -5,7 +5,7 @@ package org.DVitushkin.bracketsfiller;
  */
 
 public class BracketsFiller {
-    public static StringBuilder FillString(String str) {
+    public static StringBuilder fillString(String str) {
         StringBuilder result = new StringBuilder();
 
         if (str.length() % 2 != 0) {

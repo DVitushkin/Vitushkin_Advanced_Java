@@ -1,8 +1,7 @@
 package org.DVitushkin.duplremover;
 
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.LinkedHashSet;
+import java.util.HashSet;
 
 /**
  * DuplicateRemover has removeDuplicate method that convert any collection to LinkedHashSet
@@ -11,6 +10,6 @@ import java.util.LinkedHashSet;
 
 public class DuplicateRemover {
     public static <T> Collection<T> removeDuplicate(Collection<T> collection) {
-        return new ArrayList<>(new LinkedHashSet<>(collection));
+        return new HashSet<>(collection);
     }
 }

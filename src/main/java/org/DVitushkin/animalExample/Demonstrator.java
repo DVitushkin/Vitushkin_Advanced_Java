@@ -5,14 +5,24 @@ package org.DVitushkin.animalExample;
  */
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Demonstrator {
     public static void main(String[] args) {
-        Cat kitty = new Cat(3, "British Shorthair");
-        Dog bim = new Dog(10, true);
-        Lion alex = new Lion(3, 50);
+        Animal kitty = Cat.builder()
+                .age(3)
+                .breed("cat breed")
+                .build();
+        Animal bim = Dog.builder()
+                .age(10)
+                .goodBoy(true)
+                .build();
+        Animal alex = Lion.builder()
+                .age(15)
+                .maneSize(50)
+                .build();
 
-        ArrayList<Animal> animals = new ArrayList<Animal>();
+        List<Animal> animals = new ArrayList<Animal>();
 
         animals.add(kitty);
         animals.add(bim);

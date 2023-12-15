@@ -42,5 +42,3 @@ public class CustomArray<T> implements Iterable<T> {
         };
     }
 }
-
-
