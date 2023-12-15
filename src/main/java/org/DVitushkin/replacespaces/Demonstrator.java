@@ -5,9 +5,14 @@ package org.DVitushkin.replacespaces;
  */
 
 public class Demonstrator {
+    public static void testRemoveExtraSpaces(String testCaseName, String base, String expected) {
+        System.out.printf("*[%s]\n Was put: <%s>\n", testCaseName, base);
+        System.out.printf("Expected: <%s>, got: <%s>\n", expected, ReplaceSpaces.removeExtraSpaces(base));
+    }
     public static void main(String[] args) {
-        String base = "ex   am pl  e";
-        System.out.printf("[Test1] Was put: <%s>\n", base);
-        System.out.printf("Expected: <%s>, got: <%s>\n", "ex am pl e", ReplaceSpaces.removeExtraSpaces(base));
+        testRemoveExtraSpaces("String without space before <begin> and after <end> of string", "ex   am pl  e", "ex am pl e");
+        testRemoveExtraSpaces("String with space before <begin> but without after <end> of string", " ex am pl  e", "ex am pl e");
+        testRemoveExtraSpaces("String without space <begin> begin but with  after <end> of string", "ex am pl  e   ", "ex am pl e");
+        testRemoveExtraSpaces("String with space before <begin> but with  after <end> of string", " ex am pl  e      ", "ex am pl e");
     }
 }

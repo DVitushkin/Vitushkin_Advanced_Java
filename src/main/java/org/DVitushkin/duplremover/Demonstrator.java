@@ -12,7 +12,9 @@ import java.util.stream.IntStream;
 public class Demonstrator {
     public static void main(String[] args) {
         int[] input = new int[]{1, 4, 2, 3, 2, 2, 4, 3, 3, 3, 3, 3};
-        List<Integer> output = IntStream.of(input).boxed().collect(Collectors.toList());
+        List<Integer> output = IntStream.of(input)
+                .boxed()
+                .collect(Collectors.toList());
 
         Collection<Integer> result = DuplicateRemover.removeDuplicate(output);
         System.out.println(result);

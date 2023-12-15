@@ -5,32 +5,17 @@ package org.DVitushkin.checkclosingbracket;
  */
 
 public class Demonstrator {
+    public static void testCheckBrackets(String testCaseName, String expected, String base) {
+        System.out.printf("*[%s]\n", testCaseName);
+        System.out.printf("Expected: <%s>, got: <%s>\n", expected, CheckBrackets.checkBrackets(base));
+    }
     public static void main(String[] args) {
-        String base = "()[]{}";
-        System.out.printf("[Test1] Was put: <%s>\n", base);
-        System.out.printf("Expected: <%s>, got: <%b>\n", "true", CheckBrackets.checkBrackets(base));
-
-        base = "{[]}";
-        System.out.printf("[Test2] Was put: <%s>\n", base);
-        System.out.printf("Expected: <%s>, got: <%b>\n", "true", CheckBrackets.checkBrackets(base));
-
-        base = "((()(())))";
-        System.out.printf("[Test3] Was put: <%s>\n", base);
-        System.out.printf("Expected: <%s>, got: <%b>\n", "true", CheckBrackets.checkBrackets(base));
-
-        base = "(]";
-        System.out.printf("[Test4] Was put: <%s>\n", base);
-        System.out.printf("Expected: <%s>, got: <%b>\n", "false", CheckBrackets.checkBrackets(base));
-
-        base = "([)]";
-        System.out.printf("[Test5] Was put: <%s>\n", base);
-        System.out.printf("Expected: <%s>, got: <%b>\n", "false", CheckBrackets.checkBrackets(base));
-
-        base = ")([]";
-        System.out.printf("[Test6] Was put: <%s>\n", base);
-        System.out.printf("Expected: <%s>, got: <%b>\n", "false", CheckBrackets.checkBrackets(base));
-        base = "())([]";
-        System.out.printf("[Test7] Was put: <%s>\n", base);
-        System.out.printf("Expected: <%s>, got: <%b>\n", "false", CheckBrackets.checkBrackets(base));
+        testCheckBrackets("Case1 ()[]{}", "true", "()[]{}");
+        testCheckBrackets("Case2 {[]}", "true","{[]}");
+        testCheckBrackets("Case3 ((()(())))", "true", "((()(())))");
+        testCheckBrackets("Case4 (]", "false", "(]");
+        testCheckBrackets("Case5 ([)]", "false", "([)]");
+        testCheckBrackets("Case6 )([]", "false", ")([]");
+        testCheckBrackets("Case7 ())([]", "false", "())([]");
     }
 }

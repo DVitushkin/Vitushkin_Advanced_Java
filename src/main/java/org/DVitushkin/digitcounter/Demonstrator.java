@@ -5,8 +5,13 @@ package org.DVitushkin.digitcounter;
  */
 
 public class Demonstrator {
+    public static void testCountDigit(String testCaseName, int expected, int num) {
+        System.out.printf("*[%s]\n", testCaseName);
+        System.out.printf("Expected: <%s>, got: <%s>\n", expected, DigitCounter.countDigit(num));
+    }
     public static void main(String[] args) {
-        DigitCounter digitCounter = new DigitCounter(1212553210);
-        System.out.println(digitCounter.countDigit(2, 10));
+        testCountDigit("Case 1", 16, 54);
+        testCountDigit("Case 2", 2, 12);
+        testCountDigit("Case 3", 0, 1);
     }
 }

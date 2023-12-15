@@ -5,12 +5,16 @@ package org.DVitushkin.anagramchecker;
  */
 
 public class Demonstrator {
-    public static void main(String[] args) {
-        String first = " god";
-        String second = "do g";
+    public static void testAnagramStringChecker(String testCaseName, String base, String comparable) {
+        System.out.printf("*[%s]\nHave two strings: <%s> and <%s>\n", testCaseName, base, comparable);
+        System.out.printf("Are they anagrams: %b\n", AnagramStringChecker.isAnagram(base, comparable));
+    }
 
-        AnagramStringChecker asc = new AnagramStringChecker(first);
-        System.out.printf("Have two strings: <%s> and <%s>\n", first, second);
-        System.out.printf("Are they anagrams: %b", asc.isAnagram(second));
+    public static void main(String[] args) {
+        testAnagramStringChecker("Same words but spaces in different places", "god", "do g");
+
+        testAnagramStringChecker("Same words but different count of space symbols", "god", "do g");
+
+        testAnagramStringChecker("Just different words", "god", "dodg");
     }
 }
