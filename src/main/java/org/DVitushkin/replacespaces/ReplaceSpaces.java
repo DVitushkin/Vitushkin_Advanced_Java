@@ -5,19 +5,29 @@ package org.DVitushkin.replacespaces;
  */
 
 public class ReplaceSpaces {
-    public static StringBuilder removeExtraSpaces(String str) {
-        StringBuilder result = new StringBuilder();
+    private static String removeBeginingAndEndingExtraSpaces(String str) {
+        if (str.charAt(0) == ' ') {
+            str = str.substring(1);
+        }
+        if (str.charAt(str.length()-1) == ' ') {
+            str = str.substring(0, str.length()-1);
+        }
 
-        char current_char = str.charAt(0);
+        return str;
+    }
+    public static String removeExtraSpaces(String str) {
+        StringBuilder resultBuilder = new StringBuilder();
+
+        char currentChar = str.charAt(0);
 
         for (int i = 1; i < str.length(); i++) {
-            if (current_char != str.charAt(i)) {
-                result.append(current_char);
-                current_char = str.charAt(i);
+            if (currentChar != str.charAt(i)) {
+                resultBuilder.append(currentChar);
+                currentChar = str.charAt(i);
             }
         }
-        result.append(current_char);
-
-        return result;
+        resultBuilder.append(currentChar);
+        String result = resultBuilder.toString();
+        return removeBeginingAndEndingExtraSpaces(result);
     }
 }
