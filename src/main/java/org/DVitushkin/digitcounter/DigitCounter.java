@@ -5,21 +5,19 @@ package org.DVitushkin.digitcounter;
  * to given position.
  */
 
+//iii. Напишите метод, который будет подсчитывать
+// количество цифр «2», используемых в десятичной записи целых чисел от 0 до n (включительно)
 public class DigitCounter {
-    private final Integer num;
-
-    DigitCounter(int num) {
-        this.num = num;
-    }
-
-    public int countDigit(int soughtNum, int position) {
+    public static int countDigit(int n) {
         int counter = 0;
 
-        char[] strNum = String.valueOf(this.num).toCharArray();
-        for (int i = 0; i < position; i++) {
-            int num = strNum[i] - '0';
-            if (num == soughtNum) {
-                counter++;
+        for (int i = 0; i <= n; i++) {
+            int tmp = i;
+            while (tmp > 0) {
+                if (tmp % 10 == 2) {
+                    counter++;
+                }
+                tmp /= 10;
             }
         }
 
